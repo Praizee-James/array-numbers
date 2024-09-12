@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="list">
+    <button id="appendTodo()">Click here</button> 
+    <div id="table"></div>
+</body>
+</html>
+
+<script>
+    function appendTodo() {
+        let list = document.getElementById('list')
+        let table = document.getElementById('table')
+
+        const spanTag = document.createElement('span')
+        spanTag.textContent = `${list}`
+        const delBtn = document.createElement('button')
+        delBtn.textContent = 'Delete'
+
+        delBtn.onclick = function(){
+            spanTag.remove()
+            delBtn.remove()
+        }
+        table.appendChild(spanTag)
+        table.appendChild(delBtn)
+    }
+</script>
